@@ -1,0 +1,9 @@
+
+groups:
+  - name: count_tcp_connection
+    rules:
+      - record: count_tcp_connection_rule
+        expr: node_netstat_Tcp_CurrEstab
+        labels:
+          node1: count_tcp_connection
+

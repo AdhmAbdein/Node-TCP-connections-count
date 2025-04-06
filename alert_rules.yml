@@ -1,0 +1,12 @@
+groups:
+  - name: count_tcp_connection
+    rules:
+      - alert: count_tcp_connection_alert
+        expr: count_tcp_connection_rule > 1000
+        for: 5m
+        annotations:
+          summary: "TCP connections count in {{ $labels.instance }}"
+          description: "TCP connections count is {{ $value }}"
+
+
+
